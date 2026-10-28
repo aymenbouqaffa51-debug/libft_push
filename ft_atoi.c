@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aybouqaf <aybouqaf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 16:59:24 by aybouqaf          #+#    #+#             */
-/*   Updated: 2026/10/24 16:59:27 by aybouqaf         ###   ########.fr       */
+/*   Created: 2026/10/28 20:57:04 by aybouqaf          #+#    #+#             */
+/*   Updated: 2026/10/28 20:57:06 by aybouqaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,17 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
-		if (nptr[i++] == '-')
+	{
+		if (nptr[i] == '-')
 			s = -1;
+		i++;
+	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res = (res * 10) + (nptr[i++] - '0');
-		if (res < 0 && s == 1)
+		if (res > 2147483647 && s == 1)
 			return (-1);
-		if (res < 0 && s == -1)
+		if (res > 2147483648 && s == -1)
 			return (0);
 	}
 	return ((int)(res * s));

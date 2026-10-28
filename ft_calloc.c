@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aybouqaf <aybouqaf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 21:29:31 by aybouqaf          #+#    #+#             */
-/*   Updated: 2026/10/22 15:17:11 by aybouqaf         ###   ########.fr       */
+/*   Created: 2026/10/28 20:51:04 by aybouqaf          #+#    #+#             */
+/*   Updated: 2026/10/28 20:51:06 by aybouqaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*p;
 	size_t	total;
 
-	if (nmemb != 0 && size > (size_t) - 1 / nmemb)
+	if (nmemb != 0 && size > ((size_t)-1) / nmemb)
 		return (NULL);
 	total = nmemb * size;
 	p = malloc(total);
